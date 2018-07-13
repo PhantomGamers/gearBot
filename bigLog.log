@@ -1,0 +1,38 @@
+INFO:discord.client:logging in using static token
+INFO:discord.gateway:Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+INFO:discord.gateway:Shard ID None has connected to Gateway: gateway-prd-main-8v6p, discord-sessions-prd-1-20 (Session ID: 2af4a25088affbf33a0f00281db61522).
+INFO:discord.state:Processed a chunk for 783 members in guild ID 77285211859062784.
+INFO:discord.state:Processed a chunk for 703 members in guild ID 98793177724518400.
+INFO:discord.state:Processed a chunk for 391 members in guild ID 110214253239123968.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 136929093890473984.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 136929093890473984.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 136929093890473984.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 136929093890473984.
+INFO:discord.state:Processed a chunk for 552 members in guild ID 136929093890473984.
+INFO:discord.state:Processed a chunk for 256 members in guild ID 162814851092054016.
+INFO:discord.state:Processed a chunk for 594 members in guild ID 177245853998776321.
+INFO:discord.state:Processed a chunk for 672 members in guild ID 188339092017119232.
+INFO:discord.state:Processed a chunk for 256 members in guild ID 197059613990977536.
+INFO:discord.state:Processed a chunk for 555 members in guild ID 202063287091724289.
+INFO:discord.state:Processed a chunk for 331 members in guild ID 211568568368627722.
+INFO:discord.state:Processed a chunk for 269 members in guild ID 229260514805415936.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 241166429213294593.
+INFO:discord.state:Processed a chunk for 314 members in guild ID 241166429213294593.
+INFO:discord.state:Processed a chunk for 489 members in guild ID 249940246995795968.
+INFO:discord.state:Processed a chunk for 299 members in guild ID 264243777663795200.
+INFO:discord.state:Processed a chunk for 301 members in guild ID 270401448590835722.
+INFO:discord.state:Processed a chunk for 279 members in guild ID 273943017365307392.
+INFO:discord.state:Processed a chunk for 262 members in guild ID 287610124179341312.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 284059385431457793.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 284059385431457793.
+INFO:discord.state:Processed a chunk for 205 members in guild ID 284059385431457793.
+INFO:discord.state:Processed a chunk for 255 members in guild ID 300152432254517261.
+INFO:discord.state:Processed a chunk for 267 members in guild ID 301942625836072960.
+INFO:discord.state:Processed a chunk for 1000 members in guild ID 314798746682785792.
+INFO:discord.state:Processed a chunk for 772 members in guild ID 314798746682785792.
+INFO:discord.state:Processed a chunk for 845 members in guild ID 319337209259884546.
+INFO:discord.state:Processed a chunk for 435 members in guild ID 323514388369768449.
+INFO:discord.state:Processed a chunk for 369 members in guild ID 379834463523438592.
+INFO:discord.state:Processed a chunk for 565 members in guild ID 413750474832085013.
+INFO:root:Thursday, 12. July 2018 07:50PM: n0tj#6859 looked up n0tj#6859 with the improved layout.

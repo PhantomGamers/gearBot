@@ -1,0 +1,7 @@
+discord
+aiomysql
+aiohttp
+async_timeout
+asyncio
+logging
+
