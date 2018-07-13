@@ -157,7 +157,7 @@ async def gearhelp(ctx):
     user = ctx.author
     str_user = str(user)
     #Fancy frame for displdaying
-    embed = discord.Embed(title="", colour=discord.Colour(0x36990), url="https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000)", description="`> ` [Patch Notes.](https://www.n0tj.com/gearbot.html) \n > [Get gearBot.](https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000)")
+    embed = discord.Embed(title="", colour=discord.Colour(0x36990), url="https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000)", description="`> ` [Patch Notes.](https://www.n0tj.com/gearbot.html) \n > [Get gearBot.](https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000) \n > [Github.](https://github.com/n0tj/gearBot) ")
     embed.set_thumbnail(url="https://n0tj.com/files/z.jpg")
     #embed.set_author(name="gearbot help", url="", icon_url="")
     embed.set_footer(text="n0tj#6859 with bugs")
