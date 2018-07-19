@@ -1,5 +1,5 @@
 # gearBot
-bdo gear database.
+bdo gear database, the codes sort of a mess the main really needs to be cogged.
 
 
 ## Requirements
