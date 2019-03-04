@@ -1,0 +1,11 @@
+ssh_ip = "138.197.174.39"
+ssh_username = "root"
+ssh_password = "jjElgasdf123jj"
+host = "138.197.174.39"
+port = "3306"
+user = "yaj"
+password = "jjElgasdf123jj"
+db = "gkGear"
+charset = 'utf8'
+gearBot = "MzMyNzE2ODgwNTM4MTA3OTA1.DzfmAw.1ycYIdRu0MutuabfixikelR-NrU" #I FLIPPED THE CODES THINK IN REVERSE FOR THESE 2
+zBOT = "MzQ0NjQzNzY3MzEzMjM1OTY4.DIs_Xw.xeLAGrx1AD3SS6RlycTt0Gz8vrw" #I FLIPPED THE CODES THINK IN REVERSE FOR THESE 2
