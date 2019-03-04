@@ -7,13 +7,14 @@ import logging
 
 
 
-#What if instead of using 'logging' we just write to a .txt file normally so it only have the info below instead of all the other useless info.
-#Yes do that... Simple will just take some time.
-time = datetime.datetime.now() #This change fixes the time issue where it was displaying the wrong time
-logging.basicConfig(filename='bigLog.log',level=logging.INFO)
+#Rewrote the logging writing to a file, but the issue is that it will only write to the file after the bot restarts.
 
+time = datetime.datetime.now() #This change fixes the time issue where it was displaying the wrong time
+f = open("log.txt", "a")
 
 class bigLog:
+    
+
     async def log_1(ctx,str_user):
         print("##########################")
         print(time)
@@ -24,8 +25,8 @@ class bigLog:
         print ("{} updated their gear link.".format(str_user))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("{}: Updated {} link!".format(time,str_user))
-        logging.info("##########################")
+        f.write("{}: Updated {} link! \n".format(time,str_user))
+      
 
     async def log_2(ctx,str_user):
         print("##########################")
@@ -33,10 +34,10 @@ class bigLog:
         print("Server: {}".format(ctx.guild))
         print ("{} has been added to the database.".format(str_user))
         print("{}: Queries:{} {}".format(time,await db_sessions.sql_get_counter(), await db_sessions.sql_counter()))
-        logging.info("{}: {} has been added to the database!".format(time,str_user))
+        f.write("{}: {} has been added to the database! \n".format(time,str_user))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("##########################")
+        
 
     async def log_3(ctx,str_user):
         print("##########################")
@@ -45,18 +46,18 @@ class bigLog:
         print ("{} tried to update their ap or dp with invalid data".format(str_user))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("{}: {} tried to update with invalid AP and or DP.".format(time,str_user))
-        logging.info("##########################")
+        f.write("{}: {} tried to update with invalid AP and or DP. \n".format(time,str_user))
+      
 
     async def log_4(ctx,str_user):
         print("##########################")
         print(time)
         print("Server: {}".format(ctx.guild))
         print ("{} updated their gear, ap and dp.".format(str_user))
-        logging.info("{}: {} updated their ap and dp!".format(time,str_user))
+        f.write("{}: {} updated their ap and dp! \n".format(time,str_user))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("##########################")
+    
 
     async def log_5(ctx,str_user,getTag):
         print("##########################")
@@ -64,20 +65,20 @@ class bigLog:
         print(time)
         print("Server: {}".format(ctx.guild))
         print ("{} looked up {}'s gear".format(str_user, getTag))
-        logging.info("{}: {} looked up {} with the legacy layout.".format(time,str_user,getTag))
+        f.write("{}: {} looked up {} with the legacy layout. \n".format(time,str_user,getTag))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("##########################")
+   
 
     async def log_6(ctx,str_user,getTag):
         print("##########################")
         print(time)
         print("Server: {}".format(ctx.guild))
         print ("{} looked up {}'s gear".format(str_user,getTag))
-        logging.info("{}: {} looked up {} with the improved layout.".format(time,str_user,getTag))
+        f.write("{}: {} looked up {} with the improved layout. \n".format(time,str_user,getTag))
         await db_sessions.sql_counter()
         print("{}: Queries: {}".format(time,await db_sessions.sql_get_counter()))
-        logging.info("##########################")
+   
 
     async def log_7(ctx,str_user):
         print("##########################")
