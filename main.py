@@ -37,12 +37,7 @@ async def on_ready():
     print("\n".join(
         ["#" * 25, "Name:{0.name}#{0.discriminator}".format(bot.user), "Id : {}".format(bot.user.id), "#" * 25]))
 
-#Silences the error commands if someone using a command this bot doesn't support with it's prefex.
-@bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, CommandNotFound):
-        return
-    raise error
+
 
 #The main function of bot, any new features will get made with cogs, which has already been implemented.
 @bot.command()
@@ -116,9 +111,14 @@ async def gear(ctx, args, ap=None, dp=None):
         else:
             await ctx.send("Bad URL, please try a different one.")
 
-
+#Silences the error commands if someone using a command this bot doesn't support with it's prefex.
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, CommandNotFound):
+        return
+    raise error
     
 
 
 #Pass your bots api key here
-bot.run('keys.gearBot')
+bot.run(keys.gearBot)
