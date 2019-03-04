@@ -13,13 +13,14 @@ import logging
 import logger
 import urlChecker
 import traceback
+from discord.ext.commands import CommandNotFound
 
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
 initial_extensions = ['cogs.gearhelp',]
 
-bot = commands.Bot(command_prefix='.', description='A Rewrite Cog Example')
+bot = commands.Bot(command_prefix='!', description='gearBot')
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
@@ -35,6 +36,13 @@ if __name__ == '__main__':
 async def on_ready():
     print("\n".join(
         ["#" * 25, "Name:{0.name}#{0.discriminator}".format(bot.user), "Id : {}".format(bot.user.id), "#" * 25]))
+
+#Silences the error commands if someone using a command this bot doesn't support with it's prefex.
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, CommandNotFound):
+        return
+    raise error
 
 #The main function of bot, any new features will get made with cogs, which has already been implemented.
 @bot.command()
@@ -109,6 +117,8 @@ async def gear(ctx, args, ap=None, dp=None):
             await ctx.send("Bad URL, please try a different one.")
 
 
+    
+
 
 #Pass your bots api key here
-bot.run('MzMyNzE2ODgwNTM4MTA3OTA1.DzfmAw.1ycYIdRu0MutuabfixikelR-NrU')
+bot.run('keys.gearBot')
