@@ -1,5 +1,4 @@
 import discord
-import settings
 import aiomysql
 import db_sessions
 import aiohttp
@@ -14,7 +13,6 @@ import logging
 import logger
 import urlChecker
 import traceback
-
 
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
