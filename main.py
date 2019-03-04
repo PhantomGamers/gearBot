@@ -165,20 +165,5 @@ async def gearhelp(ctx):
     #Logging
     await logger.bigLog.log_7(ctx,str_user)
 
-@bot.command()
-async def link(ctx):
-    """ Explains how to use this bot."""
-    user = ctx.author
-    str_user = str(user)
-    #Fancy frame for displaying
-    embed = discord.Embed(title="How to get a direct link", colour=discord.Colour(0x36990), url="https://www.n0tj.com/gearbot.html")
-    embed.set_thumbnail(url="https://n0tj.com/files/z.jpg")
-    embed.set_image(url="https://i.imgur.com/jZI57BJ.gif")
-    #embed.set_author(name="How to get a direct link", icon_url="")
-    embed.set_footer(text="n0tj#6859 with bugs")
-    await ctx.send(embed=embed)
-    #Logging
-    await logger.bigLog.log_8(ctx,str_user)
-
 
 bot.run(keys.gearBot)
