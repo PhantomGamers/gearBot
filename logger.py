@@ -6,6 +6,9 @@ import datetime
 import logging
 
 
+
+#What if instead of using 'logging' we just write to a .txt file normally so it only have the info below instead of all the other useless info.
+#Yes do that... Simple will just take some time.
 time = datetime.datetime.now().strftime("%A, %d. %B %Y %I:%M%p")
 logging.basicConfig(filename='bigLog.log',level=logging.INFO)
 

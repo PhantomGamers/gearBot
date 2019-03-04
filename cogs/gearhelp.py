@@ -4,7 +4,7 @@ from fractions import gcd
 
 #Put standard operations here, such a gcd etc...
 
-class gearhelp_Cog:
+class gearhelp_Cog(commands.Cog, name="Owner Commands"):
     def __init__(self, bot):
         self.bot = bot
 

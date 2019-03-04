@@ -13,37 +13,38 @@ from discord.ext import commands
 import logging
 import logger
 import urlChecker
-
-# TODO: Under !gear @, I figured out the logic on how to do the !mainServer command.
-# TODO: Also under !gear @, I figured out how to get the ID from the mention'd.
-
-bot = commands.Bot(command_prefix=settings.command_prefix)
+import traceback
 
 
 
-@bot.event
+# Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
+# Think of it like a dot path import
+initial_extensions = ['cogs.gearhelp',]
+
+bot = commands.Bot(command_prefix='.', description='A Rewrite Cog Example')
+
+# Here we load our extensions(cogs) listed above in [initial_extensions].
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        try:
+            bot.load_extension(extension)
+        except Exception as e:
+            print(f'Failed to load extension {extension}.', file=sys.stderr)
+            traceback.print_exc()
+
+
+#Displays the bots tags and ID in terminal
 async def on_ready():
     print("\n".join(
         ["#" * 25, "Name:{0.name}#{0.discriminator}".format(bot.user), "Id : {}".format(bot.user.id), "#" * 25]))
 
-
-@bot.event
-async def on_guild_join(guild):
-    await guild.create_role(name="gearBot Mod")
-    print("done")
-
-@bot.event
-async def on_guild_join(guild):
-    await guild.create_role(name="gearBot User")
-    print("done")
-
-
-#Main convert break up into cogs later.
+#The main function of bot, any new features will get made with cogs, which has already been implemented.
 @bot.command()
 async def gear(ctx, args, ap=None, dp=None):
     user = ctx.author
     str_user = str(user)
 
+    #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
     if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
         if ap == None or dp == None:
             r = await db_sessions.sql_check_name_v2(str(user))
@@ -111,59 +112,5 @@ async def gear(ctx, args, ap=None, dp=None):
 
 
 
-
-def checkMe(ctx):
-    return ctx.message.author.id == 105714191653949440
-
-
-@bot.command()
-@commands.check(checkMe)
-async def exit(ctx):
-    """Closes the bot."""
-    await ctx.send("Logging out!")
-    await bot.logout()
-
-
-@bot.command()
-async def version(ctx):
-    await ctx.send(str(discord.__version__))
-
-# Left off with building the add new note insert in db_sessions
-@bot.command()
-async def gearnote(ctx, args):
-    user = ctx.author
-    str_user = str(user)
-    r = await db_sessions.sql_check_name_v2(str(user))
-    note = await db_sessions.sql_check_note(str(user))
-    if note == 'None':
-
-        await db_sessions.sql_new_user_note(str(user), "<@" + str(ctx.author.id) + ">", str(args))
-        await ctx.send("You have been added to the database.")
-                #Make an update note in db_sessions
-
-    else:
-        await db_sessions.sql_update_note(str_user, args)
-        await ctx.send("Your note has been updated.")
-        print(await db_sessions.sql_check_note(str_user))
-                    #Logging
-                    #await logger.bigLog.log_1(ctx,str_user)
-
-
-
-
-@bot.command()
-async def gearhelp(ctx):
-    """ Explains how to use this bot."""
-    user = ctx.author
-    str_user = str(user)
-    #Fancy frame for displdaying
-    embed = discord.Embed(title="", colour=discord.Colour(0x36990), url="https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000)", description="`> ` [Patch Notes.](https://www.n0tj.com/gearbot.html) \n > [Get gearBot.](https://discordapp.com/oauth2/authorize?client_id=344643767313235968&scope=bot&permissions=0x10008000) \n > [Github.](https://github.com/n0tj/gearBot) ")
-    embed.set_thumbnail(url="https://n0tj.com/files/z.jpg")
-    #embed.set_author(name="gearbot help", url="", icon_url="")
-    embed.set_footer(text="n0tj#6859 with bugs")
-    await ctx.send(embed=embed)
-    #Logging
-    await logger.bigLog.log_7(ctx,str_user)
-
-
-bot.run(keys.gearBot)
+#Pass your bots api key here
+bot.run('MzMyNzE2ODgwNTM4MTA3OTA1.DzfmAw.1ycYIdRu0MutuabfixikelR-NrU')
