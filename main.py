@@ -5,7 +5,7 @@ from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 
 #Makes the traceback 1 line.
-#sys.tracebacklimit = 0
+sys.tracebacklimit = 0
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
