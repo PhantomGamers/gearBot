@@ -1,5 +1,4 @@
 import discord,aiomysql,aiohttp,async_timeout,asyncio,traceback,sys,keys
-#clearfrom modules import db_sessions, urlChecker, logger
 import datetime
 from datetime import date
 from discord.ext import commands
