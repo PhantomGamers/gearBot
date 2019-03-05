@@ -11,7 +11,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
 
 
     @commands.command(name='gear')
-    async def gear(self, ctx, args, ap=None, dp=None):
+    async def gear(self, ctx, args):
         user = ctx.author
         str_user = str(user)
 
