@@ -8,6 +8,9 @@ bdo gear database, the code is sort of a mess the main really needs to be cogged
 
 > python3 -m pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
 
+or if you're using zsh
+
+> python3 -m pip install -U git+"https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]"
 
 ## Database Schema
 
