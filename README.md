@@ -1,6 +1,5 @@
 # gearBot
-bdo gear database, the code is sort of a mess the main really needs to be cogged.
-
+bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability.
 
 ## Requirements
 
@@ -18,7 +17,7 @@ Then set up your python path
 
 ## Database Schema
 
-> CREATE TABLE gear (userId int,name varchar(255),link varchar(255),ap int,dp int,id varchar(255))ENGINE=InnoDB DEFAULT CHARSET=utf8;
+`CREATE TABLE gear (userId int,name varchar(255),link varchar(255),ap int,dp int,id varchar(255))ENGINE=InnoDB DEFAULT CHARSET=utf8;`
 
 ## Contact me
 If you have any questions you can contact me via discord; n0tj#6859 
