@@ -2,9 +2,7 @@
 bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability.
 
 
-## Requirements
-
-
+## Setup
 ### First Step
 > pip install -r requirements.txt
 
