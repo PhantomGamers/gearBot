@@ -5,6 +5,8 @@ bdo gear database, super simple just recently finished coverting the main into c
 
 ## Requirements
 
+---
+ 
 ### First Step
 > pip install -r requirements.txt
 
