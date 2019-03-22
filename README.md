@@ -16,6 +16,7 @@ bdo gear database, super simple just recently finished coverting the main into c
 
 ### Third Step
 > export PYTHONPATH="/PATH/TO/gearBot/cogs/modules"
+
 Set the python path, I have to figure a different way of doing this, but until then.
 
 
