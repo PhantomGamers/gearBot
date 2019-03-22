@@ -3,6 +3,7 @@ import datetime
 from datetime import date
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
+import sys
 
 #Makes the traceback 1 line.
 sys.tracebacklimit = 0
