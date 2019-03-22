@@ -1,5 +1,5 @@
   <a href="https://github.com/n0tj/gearBot/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/w/n0tj/gearBot.svg" />
+        <img src="https://img.shields.io/github/commit-activity/w/n0tj/gearBot.svg" /></a>
 
 # gearBot
 bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability.
