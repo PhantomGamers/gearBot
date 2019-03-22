@@ -15,8 +15,8 @@ bdo gear database, super simple just recently finished coverting the main into c
 > python3 -m pip install -U git+"https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]"
 
 ### Third Step
-Then set up your python path
 > export PYTHONPATH="/PATH/TO/gearBot/cogs/modules"
+Set the python path, I have to figure a different way of doing this, but until then.
 
 ---
 
