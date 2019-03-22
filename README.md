@@ -1,4 +1,4 @@
-  <a href="https://github.com/badges/shields/pulse" alt="Activity">
+  <a href="https://github.com/n0tj/gearBot/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/w/n0tj/gearBot.svg" />
 
 # gearBot
