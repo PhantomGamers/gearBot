@@ -1,6 +1,6 @@
 <p>
 <a href="https://github.com/n0tj/gearBot/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/n0tj/gearBot.svg" /></a>
+        <img src="https://img.shields.io/github/commit-activity/w/n0tj/gearBot.svg" /></a>
 
 <img src= https://img.shields.io/github/last-commit/n0tj/gearBot.svg />
 </p>
