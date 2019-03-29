@@ -20,7 +20,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
             r = await db_sessions.sql_check_name_v2(str(user))
             if str_user == r:
                 await db_sessions.sql_update_link(str_user, args)
-                await ctx.send("You gear has been updated.")
+                await ctx.send("Your gear has been updated.")
                 #Logging
                 await logger.bigLog.log_1(ctx,str_user)
             else:
@@ -54,7 +54,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                             embed.set_image(url=await db_sessions.sql_link(str(getTag)))
                             embed.set_thumbnail(url=getTag.avatar_url)
                             embed.set_author(name=str(getTag), icon_url=getTag.avatar_url)
-                            embed.set_footer(text="n0tj#6859 with bugs", icon_url= "https://n0tj.com/files/z.jpg")
+                            embed.set_footer(text="n0tj#6859 with bugs", icon_url= "https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
                             await ctx.send( embed=embed)
                         #Logging
                             await logger.bigLog.log_6(ctx,str_user,str(getTag))
