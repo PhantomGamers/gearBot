@@ -55,7 +55,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
             await ctx.send("Bad URL, please try a different one.")
 
 
-            #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
+        #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
         if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
             r = await db_sessions.sql_check_name_v2(str(user))
             if str_user == r:
