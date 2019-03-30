@@ -6,7 +6,6 @@ import datetime
 import logging
 
 #Rewrote the logging writing to a file, but the issue is that it will only write to the file after the bot restarts.
-
 time = datetime.datetime.now() #This change fixes the time issue where it was displaying the wrong time
 f = open("log.txt", "a")
 

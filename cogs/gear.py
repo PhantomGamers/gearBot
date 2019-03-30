@@ -15,20 +15,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
         user = ctx.author
         str_user = str(user)
 
-        #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
-        if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
-            r = await db_sessions.sql_check_name_v2(str(user))
-            if str_user == r:
-                await db_sessions.sql_update_link(str_user, args)
-                await ctx.send("Your gear has been updated.")
-                #Logging
-                await logger.bigLog.log_1(ctx,str_user)
-            else:
-                await db_sessions.sql_new_user(str(user), args, "<@" + str(ctx.author.id) + ">")
-                await ctx.send("You have been added to the database.")
-                #Logging
-                await logger.bigLog.log_2(ctx,str_user)
-
+            
         if args.startswith("<"):
             getTag = discord.utils.get(
                         ctx.message.guild.members, id=ctx.message.raw_mentions[0])
@@ -64,9 +51,23 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                             #print("\n".join([x.name for x in role.members])) #LIST OF ALL THE USERS IN A ROLE
             else:
                 await ctx.send("User {} isn't in the database.".format(str(getTag)))
-                print("User {} isn't in the database.".format(str(getTag)))
         else:
-            await ctx.send("Bad URL, please try a different one.")    
+            await ctx.send("Bad URL, please try a different one.")
+
+
+            #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
+        if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
+            r = await db_sessions.sql_check_name_v2(str(user))
+            if str_user == r:
+                await db_sessions.sql_update_link(str_user, args)
+                await ctx.send("Your gear has been updated.")
+                #Logging
+                await logger.bigLog.log_1(ctx,str_user)
+            else:
+                await db_sessions.sql_new_user(str(user), args, "<@" + str(ctx.author.id) + ">")
+                await ctx.send("You have been added to the database.")
+                #Logging
+                await logger.bigLog.log_2(ctx,str_user)    
                    
 
 
