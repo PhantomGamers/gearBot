@@ -42,7 +42,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                     embed.set_author(name=str(getTag), icon_url=getTag.avatar_url)
                     embed.set_footer(text="n0tj#6859 with bugs", icon_url= "https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
                     await ctx.send( embed=embed)
-                #Logging
+                    #Logging
                     await logger.bigLog.log_6(ctx,str_user,str(getTag))
                     #print(user.mentioned_in(message))
                     #print(ctx.message.raw_mentions) #this returns the mentions ID.
@@ -51,6 +51,8 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
             else:
                 await ctx.send("User {} isn't in the database.".format(str(getTag)))
                 print("User {} isn't in the database.".format(str(getTag)))
+        else:
+            print("This should never execute.")
 
 
 
@@ -67,8 +69,8 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                 await ctx.send("You have been added to the database.")
                 #Logging
                 await logger.bigLog.log_2(ctx,str_user)
-        else:
-            await ctx.send("Invalid URL, please try a different one.")
+      #  else:
+     #       await ctx.send("Invalid URL, please try a different one.")
                    
 
 
