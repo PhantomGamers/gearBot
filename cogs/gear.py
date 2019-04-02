@@ -43,17 +43,10 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                     embed.set_footer(text="n0tj#6859 with bugs", icon_url= "https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
                     await ctx.send( embed=embed)
                     #Logging
-                    await logger.bigLog.log_6(ctx,str_user,str(getTag))
-                    #print(user.mentioned_in(message))
-                    #print(ctx.message.raw_mentions) #this returns the mentions ID.
-                    #print(ctx.message.guild.name) # Returns the guild that user used the command in. Should also add a timestamp when this is put in a database. So they can only change guild every 48hrs
-                    #print("\n".join([x.name for x in role.members])) #LIST OF ALL THE USERS IN A ROLE          
+                    await logger.bigLog.log_6(ctx,str_user,str(getTag))       
             else:
                 await ctx.send("User {} isn't in the database.".format(str(getTag)))
                 print("User {} isn't in the database.".format(str(getTag)))
-        else:
-            print("This should never execute.")
-
 
 
         #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
@@ -69,10 +62,6 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                 await ctx.send("You have been added to the database.")
                 #Logging
                 await logger.bigLog.log_2(ctx,str_user)
-      #  else:
-     #       await ctx.send("Invalid URL, please try a different one.")
-                   
-
 
 
 #Adding this as a cog

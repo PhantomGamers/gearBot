@@ -5,7 +5,8 @@ import db_sessions
 import datetime
 import logging
 
-#Rewrote the logging writing to a file, but the issue is that it will only write to the file after the bot restarts.
+#Rewrote the logging writing to a file, but the issue is that it will only write to the file after,
+#  the bot restarts which is bad and dumb.
 time = datetime.datetime.now() #This change fixes the time issue where it was displaying the wrong time
 f = open("log.txt", "a")
 
@@ -14,8 +15,7 @@ class bigLog:
         print("##########################")
         print(time)
         print("Server: {}".format(ctx.guild))
-        print("Good Link.")
-        print("User did not update AP & DP.")
+        print("Valid Link.")
         print("{} is in the database.".format(str_user))
         print ("{} updated their gear link.".format(str_user))
         await db_sessions.sql_counter()

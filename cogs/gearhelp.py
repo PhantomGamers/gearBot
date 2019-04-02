@@ -10,15 +10,9 @@ class gearhelp_Cog(commands.Cog, name="Owner Commands"):
 
 
     @commands.command(name='gcd')
-    async def gcd(self, ctx, xx, yy):
-        """ Produces the GCD of the first number passed. """
-        x = int(xx)
-        y = int(yy)
-        while y != 0:
-            (x, y) = (y, x % y)
-        await ctx.send('GCD of first number: {}'.format(x,y))
-
-
+    async def gcd(self):
+        """ Produle help docs for the bot. """
+        await ctx.send('Help me!')
 
 
 #Adding this as a cog
