@@ -38,12 +38,6 @@ async def on_ready():
 
 
 
-    
-
-
-
-#The main function of bot, any new features will clearget made with cogs, which has already been implemented.
-
 
 #Silences the error commands if someone using a command this bot doesn't support with it's prefex.
 @bot.event
