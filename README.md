@@ -9,7 +9,11 @@
 bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability.
 
 
-## Setup
+## General use
+>!gear <@link> will update you your gear screenshot in the database.
+>!gear <@user> will query the database for a users gear screenshot and share it to the channel where requested.
+
+## Build
 ### First Step
 > pip install -r requirements.txt
 
