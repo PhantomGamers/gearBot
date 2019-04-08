@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 
 class gear_Cog(commands.Cog, name="Owner Commands"):
+    """You can query other uses via !gear @user or update your gear via !gear <link> """
     def __init__(self, bot):
         self.bot = bot
 
