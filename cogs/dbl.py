@@ -10,7 +10,7 @@ class DiscordBotsOrgAPI:
 
     def __init__(self, bot):
         self.bot = bot
-        self.token = 'dbl_token'  #  set this to your DBL token
+        self.token = 'dbl_token'  #  set this to your DBL token, update this if bot gets verified.
         self.dblpy = dbl.Client(self.bot, self.token, loop=bot.loop)
         self.updating = bot.loop.create_task(self.update_stats())
 
