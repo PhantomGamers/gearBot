@@ -12,7 +12,7 @@ loop = asyncio.get_event_loop()
 def sql_user_mention(name):
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('select id from gear where name=%s;', name)
     r = yield from cur.fetchall()
@@ -28,7 +28,7 @@ def sql_user_mention(name):
 def sql_name(name):
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop , charset='utf8')
+                                       db=keys.db, loop=loop , charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('select name from gear where name=%s;', name)
     r = yield from cur.fetchall()
@@ -47,7 +47,7 @@ def sql_name(name):
 def sql_link(name):
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT link FROM gear WHERE name = %s;', name)
     r = yield from cur.fetchall()
@@ -66,7 +66,7 @@ def sql_link(name):
 def sql_id(user_id):
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT name from gear WHERE id = %s', user_id)
     r = yield from cur.fetchall()
@@ -85,7 +85,7 @@ def sql_id(user_id):
 def sql_count():
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT COUNT(*) from gear')
     r = yield from cur.fetchall()
@@ -106,7 +106,7 @@ def sql_count():
 async def sql_check_name(name):
     conn = await aiomysql.connect(host=keys.host, port=3306,
                                   user=keys.user, password=keys.password,
-                                  db=keys.db, loop=loop, charset='utf8')
+                                  db=keys.db, loop=loop, charset='utf8mb4')
     async with conn.cursor() as cur:
         await cur.execute('SELECT name from gear where name = %s', (name))
         r = cur.fetchall()
@@ -120,7 +120,7 @@ async def sql_check_name(name):
 def sql_check_name_v2(name):
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT name from gear where name = %s', (name))
     r = yield from cur.fetchone()
@@ -142,7 +142,7 @@ def sql_check_name_v2(name):
 async def sql_counter():
     conn = await aiomysql.connect(host=keys.host, port=3306,
                                   user=keys.user, password=keys.password,
-                                  db=keys.db, loop=loop, charset='utf8')
+                                  db=keys.db, loop=loop, charset='utf8mb4')
     async with conn.cursor() as cur:
         await cur.execute('UPDATE gearData set queries = queries + 1;')
         await conn.commit()
@@ -153,7 +153,7 @@ async def sql_counter():
 def sql_get_counter():
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT queries from gearData;')
     r = yield from cur.fetchone()
@@ -175,7 +175,7 @@ def sql_get_counter():
 def sql_lol():
     conn = yield from aiomysql.connect(host=keys.host, port=3306,
                                        user=keys.user, password=keys.password,
-                                       db=keys.db, loop=loop, charset='utf8')
+                                       db=keys.db, loop=loop, charset='utf8mb4')
     cur = yield from conn.cursor()
     yield from cur.execute('SELECT COUNT(*) from gear')
     r = yield from cur.fetchall()
@@ -192,7 +192,7 @@ def sql_lol():
 async def sql_new_user(name, link, user_id):
     conn = await aiomysql.connect(host=keys.host, port=3306,
                                   user=keys.user, password=keys.password,
-                                  db=keys.db, loop=loop, charset='utf8')
+                                  db=keys.db, loop=loop, charset='utf8mb4')
     async with conn.cursor() as cur:
         await cur.execute('INSERT into gear (name,link) values (%s,%s)', (name, link))
         await cur.execute('UPDATE gear set id = %s where name =%s', (user_id, name))
@@ -204,7 +204,7 @@ async def sql_new_user(name, link, user_id):
 async def sql_update_link(name, link):
     conn = await aiomysql.connect(host=keys.host, port=3306,
                                   user=keys.user, password=keys.password,
-                                  db=keys.db, loop=loop, charset='utf8')
+                                  db=keys.db, loop=loop, charset='utf8mb4')
     async with conn.cursor() as cur:
         await cur.execute('UPDATE gear set link= %s where name= %s;', (link, name))
         await cur.execute('commit;')
