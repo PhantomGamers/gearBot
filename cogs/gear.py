@@ -12,7 +12,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
 
     @commands.command(name='gear')
     async def gear(self, ctx, args):
-        """You can query other uses via !gear @user or update your gear via !gear <link> """
+        """First update your gear with !gear <link> then query your gear and other players with !gear <@user>"""
         user = ctx.author
         str_user = str(user)
   
@@ -46,7 +46,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                     #Logging
                     await logger.bigLog.log_6(ctx,str_user,str(getTag))       
             else:
-                await ctx.send("User {} isn't in the database.".format(str(getTag)))
+                await ctx.send("User {} isn't in the database. Tell them to add themselves to it by using !gear <link>".format(str(getTag)))
                 print("User {} isn't in the database.".format(str(getTag)))
 
 
