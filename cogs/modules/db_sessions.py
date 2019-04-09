@@ -68,7 +68,7 @@ def sql_id(user_id):
                                        user=keys.user, password=keys.password,
                                        db=keys.db, loop=loop, charset='utf8')
     cur = yield from conn.cursor()
-    yield from cur.execute('SELECT id from gear WHERE id = %s', user_id)
+    yield from cur.execute('SELECT name from gear WHERE id = %s', user_id)
     r = yield from cur.fetchall()
     if not r:
         print('List is empty bruv.')
