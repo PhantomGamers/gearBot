@@ -38,7 +38,18 @@ Set the python path, I have to figure a different way of doing this, but until t
 
 
 ## Database Schema
+> mysql
+
+> create databse gearBot
+
+> use gearBot
+
 > CREATE TABLE gear (userId int,name varchar(255),link varchar(255),ap int,dp int,id varchar(255))ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+> alter database NAME default collate utf8mb4_bin;
+
+> SHOW VARIABLES LIKE 'collat%'; 
+
 
 
 ## Contact me
