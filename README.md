@@ -10,10 +10,15 @@ bdo gear database, super simple just recently finished coverting the main into c
 
 
 ## General Use
+>!gear or !gearhelp will give you the help commands.
+
+
 >!gear <@link> will update you your gear screenshot in the database.
  
 
 >!gear <@user> will query the database for a users gear screenshot and share it to the channel where requested.
+
+
 
 ## Build
 ### First Step
