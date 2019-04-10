@@ -5,7 +5,7 @@ from datetime import date
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 
-class gear_Cog(commands.Cog, name="Owner Commands"):
+class gear_Cog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -17,7 +17,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
         str_user = str(user)
         test = await db_sessions.sql_id(args)
         pls = ctx.message.raw_mentions
-  
+
         if args.startswith("<"):
             getTag = discord.utils.get(
                         ctx.message.guild.members, id=ctx.message.raw_mentions[0])
@@ -66,6 +66,7 @@ class gear_Cog(commands.Cog, name="Owner Commands"):
                 await ctx.send("You have been added to the database.")
                 #Logging
                 await logger.bigLog.log_2(ctx,str_user)
+                        
 
 
 #Adding this as a cog

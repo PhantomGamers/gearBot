@@ -12,7 +12,7 @@ class gearhelp_Cog(commands.Cog, name="Owner Commands"):
 
     @commands.command(name='gearhelp')
     async def gearhelp(self, ctx):
-        """First update your gear with !gear <link> then query your gear and other players with !gear <@user>"""
+        """!gearhelp for a nicer view of the help commands."""
         embed = discord.Embed(title="Join the gearbot support channel", colour=discord.Colour(0xa9219b), url="https://discord.gg/jZAJ7Yy")
 
         #embed.set_image(url="https://cdn.discordapp.com/embed/avatars/0.png")
