@@ -8,7 +8,7 @@ import logging
 import keys
 
 
-class DiscordBotsOrgAPI:
+class DiscordBotsOrgAPI(commands.Cog):
     """Handles interactions with the discordbots.org API"""
 
     def __init__(self, bot):
