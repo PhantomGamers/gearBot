@@ -22,6 +22,7 @@ class gearhelp_Cog(commands.Cog, name="Owner Commands"):
 
         embed.add_field(name="**Updating your gear screenshot, direct link only**", value="**!gear <link>**")
         embed.add_field(name="**Looking up someone or your own gear**", value="**!gear <@user>**")
+        #embed.add_field(name="**Get gearBot for your server!**", value="**!gear <@user>**")
 
 
         await ctx.send(embed=embed)

@@ -42,7 +42,7 @@ class gear_Cog(commands.Cog):
                     embed = discord.Embed(colour=discord.Colour(0xa9219b))
                     embed.set_image(url=await db_sessions.sql_link(str(getTag)))
                     embed.set_thumbnail(url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
-                    embed.set_author(name="gearBot support",  url="https://discord.gg/jZAJ7Yy", icon_url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
+                    embed.set_author(name="get gearBot",  url="https://discordbots.org/bot/344643767313235968", icon_url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
                     embed.set_footer(text=test, icon_url= "https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
                     #embed.add_field(name=test, value="Sorry about all the downtime.")
                     await ctx.send( embed=embed)
