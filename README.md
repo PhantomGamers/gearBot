@@ -1,7 +1,4 @@
 <p>
-<a href="https://github.com/n0tj/gearBot/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/w/n0tj/gearBot.svg" /></a>
-
 <img src= https://img.shields.io/github/last-commit/n0tj/gearBot.svg />
 <a href="https://discordbots.org/bot/344643767313235968" >
   <img src="https://discordbots.org/api/widget/servers/344643767313235968.svg" alt="gearBot" />
