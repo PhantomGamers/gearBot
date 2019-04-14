@@ -41,9 +41,7 @@ bdo gear database, super simple just recently finished coverting the main into c
 
 Set the python path, I have to figure a different way of doing this, but until then.
 
-
-
-## Database Schema
+### Fourth Step
 > mysql
 
 > create databse gearBot
@@ -52,7 +50,7 @@ Set the python path, I have to figure a different way of doing this, but until t
 
 > CREATE TABLE gear (userId int,name varchar(255),link varchar(255),ap int,dp int,id varchar(255))ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-> alter database NAME default collate utf8mb4_bin;
+> alter database gearBot default collate utf8mb4_bin;
 
 > SHOW VARIABLES LIKE 'collat%'; 
 
