@@ -17,7 +17,7 @@ def sql_user_mention(name):
     yield from cur.execute('select id from gear where name=%s;', name)
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("User doesn't exist.")
     else:
         return(r)
         yield from cur.close()
@@ -33,7 +33,7 @@ def sql_name(name):
     yield from cur.execute('select name from gear where name=%s;', name)
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("User doesn't exist.")
     else:
         sanitize_user_id_v1 = str(r)
         sanitize_user_id_v2 = sanitize_user_id_v1.replace("(('", "")
@@ -52,7 +52,7 @@ def sql_link(name):
     yield from cur.execute('SELECT link FROM gear WHERE name = %s;', name)
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("User doesn't exist.")
     else:
         sanitize_user_id_v1 = str(r)
         sanitize_user_id_v2 = sanitize_user_id_v1.replace("(('", "")
@@ -71,7 +71,7 @@ def sql_id(user_id):
     yield from cur.execute('SELECT name from gear WHERE id = %s', user_id)
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("User doesn't exist.")
     else:
         sanitize_user_id_v1 = str(r)
         sanitize_user_id_v2 = sanitize_user_id_v1.replace("(('", "")
@@ -90,7 +90,7 @@ def sql_count():
     yield from cur.execute('SELECT COUNT(*) from gear')
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("Count error, no rows in table.")
     else:
         #print("SLOWER {}".format(r))
             sanitize_user_id_v1 = str(r)
@@ -125,7 +125,7 @@ def sql_check_name_v2(name):
     yield from cur.execute('SELECT name from gear where name = %s', (name))
     r = yield from cur.fetchone()
     if not r:
-        print('List is empty bruv.')
+       print("User doesn't exist.")
     else:
         #print("FASTER {}".format(r))
         sanitize_user_id_v1 = str(r)
@@ -158,7 +158,7 @@ def sql_get_counter():
     yield from cur.execute('SELECT queries from gearData;')
     r = yield from cur.fetchone()
     if not r:
-        print('List is empty bruv.')
+        print("User doesn't exist.")
     else:
         #print("FASTER {}".format(r))
             sanitize_user_id_v1 = str(r)
@@ -180,7 +180,7 @@ def sql_lol():
     yield from cur.execute('SELECT COUNT(*) from gear')
     r = yield from cur.fetchall()
     if not r:
-        print('List is empty bruv.')
+        print("Count error, no rows in table.")
     else:
         return(r)
 
@@ -197,7 +197,7 @@ async def sql_new_user(name, link, user_id):
         await cur.execute('INSERT into gear (name,link) values (%s,%s)', (name, link))
         await cur.execute('UPDATE gear set id = %s where name =%s', (user_id, name))
         await conn.commit()
-        print("New User!")
+        print("New user has been created.")
         conn.close()
 
 @asyncio.coroutine

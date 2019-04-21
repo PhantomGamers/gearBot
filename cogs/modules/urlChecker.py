@@ -10,9 +10,10 @@ async def urlCheck(session, url):
     with async_timeout.timeout(10000):
         try:
             async with session.get(url) as response:
-                if response.status != 200:
-                    return False
-                else:
+                if response.status == 200:
                     return True
+                else:
+                    return False
+   
         except Exception as error:
             return ("Your link is unreachable.")

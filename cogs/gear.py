@@ -54,19 +54,39 @@ class gear_Cog(commands.Cog):
 
 
         #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
-        if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
-            r = await db_sessions.sql_check_name_v2(str(user))
-            if str_user == r:
-                await db_sessions.sql_update_link(str_user, args)
-                await ctx.send("Your gear has been updated.")
-                #Logging
-                await logger.bigLog.log_1(ctx,str_user)
+        #Try to cover more edge cases here for example if the user passes an invalid link or if they pass garbage instead of a link or a users @.
+        if await urlChecker.urlCheck(urlChecker.session, args) is False:
+            await ctx.send("Hey, your link is invalid.")
+        else:
+            if args.startswith("http") and await urlChecker.urlCheck(urlChecker.session, args) is True:
+
+                r = await db_sessions.sql_check_name_v2(str(user))
+                if str_user == r:
+                    await db_sessions.sql_update_link(str_user, args)
+                    await ctx.send("{} gear has been updated.".format("<@" + str(ctx.author.id) + ">"))
+                    #Logging
+                    await logger.bigLog.log_1(ctx,str_user)
+                else:
+                    await db_sessions.sql_new_user(str(user), args, "<@" + str(ctx.author.id) + ">")
+                    await ctx.send("You have been added to the database.")
+                    #Logging
+                    await logger.bigLog.log_2(ctx,str_user)
+            
+            if args.startswith("http") or args.startswith("<"):
+                print("User invoked command.")
             else:
-                await db_sessions.sql_new_user(str(user), args, "<@" + str(ctx.author.id) + ">")
-                await ctx.send("You have been added to the database.")
-                #Logging
-                await logger.bigLog.log_2(ctx,str_user)
-                        
+                embed = discord.Embed(colour=discord.Colour(0xa9219b))
+
+                #embed.set_image(url="https://cdn.discordapp.com/embed/avatars/0.png")
+                embed.set_thumbnail(url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
+                embed.set_author(name="Join the gearBot discord", url="https://discord.gg/jZAJ7Yy", icon_url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
+                embed.set_footer(text="Message n0tj#6859 with any bugs or concerns.", icon_url="https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
+                embed.add_field(name="**Updating your gear screenshot, direct link only**", value="**!gear <link>**")
+                embed.add_field(name="**Looking up someone or your own gear**", value="**!gear <@user>**")
+
+
+                await ctx.send(embed=embed)
+                            
 
 
 #Adding this as a cog
