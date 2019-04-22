@@ -92,7 +92,6 @@ def sql_count():
     if not r:
         print("Count error, no rows in table.")
     else:
-        #print("SLOWER {}".format(r))
             sanitize_user_id_v1 = str(r)
             sanitize_user_id_v2 = sanitize_user_id_v1.replace("((", "")
             sanitize_user_id_v3 = sanitize_user_id_v2.replace(",),)", "")
@@ -110,9 +109,7 @@ async def sql_check_name(name):
     async with conn.cursor() as cur:
         await cur.execute('SELECT name from gear where name = %s', (name))
         r = cur.fetchall()
-        # await conn.commit()
         return(r)
-        #print("Name: ", r)
         conn.close()
 
 

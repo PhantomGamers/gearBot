@@ -16,7 +16,7 @@ class gear_Cog(commands.Cog):
         user = ctx.author
         str_user = str(user)
         test = await db_sessions.sql_id(args)
-        pls = ctx.message.raw_mentions
+
 
         if args.startswith("<"):
             getTag = discord.utils.get(
@@ -25,10 +25,10 @@ class gear_Cog(commands.Cog):
             if str(getTag) == w:
                 #Check to see weather they can have a direct link or not and then chooses the format based on that.
                 some_list = [await db_sessions.sql_link(str(getTag))]
-                bad = ['.jpg', '.png', '.PNG', '.JPG']
+                extensions = ['.jpg', '.png', '.PNG', '.JPG']
                 flag = 0
                 for s in some_list:
-                    for item in bad:
+                    for item in extensions:
                         if item in s:
                             flag = 1
                 if flag == 0:
@@ -44,7 +44,6 @@ class gear_Cog(commands.Cog):
                     embed.set_thumbnail(url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
                     embed.set_author(name="get gearBot",  url="https://discordbots.org/bot/344643767313235968", icon_url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
                     embed.set_footer(text=test, icon_url= "https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
-                    #embed.add_field(name=test, value="Sorry about all the downtime.")
                     await ctx.send( embed=embed)
                     #Logging
                     await logger.bigLog.log_6(ctx,str_user,str(getTag))       
@@ -76,15 +75,11 @@ class gear_Cog(commands.Cog):
                 print("User invoked command.")
             else:
                 embed = discord.Embed(colour=discord.Colour(0xa9219b))
-
-                #embed.set_image(url="https://cdn.discordapp.com/embed/avatars/0.png")
                 embed.set_thumbnail(url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
                 embed.set_author(name="Join the gearBot discord", url="https://discord.gg/jZAJ7Yy", icon_url="https://pbs.twimg.com/media/DIF3WFMVwAA1qAN.png")
                 embed.set_footer(text="Message n0tj#6859 with any bugs or concerns.", icon_url="https://pbs.twimg.com/profile_images/1111417292955381761/z18vzMwY_400x400.png")
                 embed.add_field(name="**Updating your gear screenshot, direct link only**", value="**!gear <link>**")
                 embed.add_field(name="**Looking up someone or your own gear**", value="**!gear <@user>**")
-
-
                 await ctx.send(embed=embed)
                             
 
