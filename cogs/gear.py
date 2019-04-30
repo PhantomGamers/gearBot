@@ -33,8 +33,9 @@ class gear_Cog(commands.Cog):
                             flag = 1
                 if flag == 0:
                         #Legacy layout
+                        #TODO: Write something here that will take the link provided an return a direct link, that will be updated in the database server side
                         print(("User mention: {}").format(str(ctx.author.mention)))
-                        await ctx.send("{} 's gear: {}".format(args, await db_sessions.sql_link(str(getTag))))
+                        await ctx.send("Legacy Layout, use a direct link. \n {} 's gear: {}".format(args, await db_sessions.sql_link(str(getTag))))
                         #Logging
                         await logger.bigLog.log_5(ctx,str_user,str(getTag))
                 else:
@@ -53,7 +54,7 @@ class gear_Cog(commands.Cog):
 
 
         #This is some santization of input, when the user passes a link it verifies it is a link by checking to see if its starts with 'http'
-        #Try to cover more edge cases here for example if the user passes an invalid link or if they pass garbage instead of a link or a users @.
+        #Try to cover more edge cases here for example if the user passes an invalid link or if they pass garbage instead of a link or a invalid users @.
         if await urlChecker.urlCheck(urlChecker.session, args) is False:
             await ctx.send("Hey, your link is invalid.")
         else:
