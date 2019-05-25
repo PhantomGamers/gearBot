@@ -51,6 +51,9 @@ Set the python path, I have to figure a different way of doing this, but until t
 
 > SHOW VARIABLES LIKE 'collat%'; 
 
+### Final Step
+Settings up all the keys you'll need.
+
 
 
 ## Contact me
