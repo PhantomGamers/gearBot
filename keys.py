@@ -1,0 +1,11 @@
+ssh_ip = "" # public ip address of server
+ssh_username = ""
+ssh_password = "" 
+host = "" # public ip address of server
+port = "" # mysql port
+user = "" # db username
+password = "" # db password
+db = "gearBot" #datbase name
+charset = 'utf8'
+gearBot = '' # discord API Key
+#dbl = '' # Ignore this one
