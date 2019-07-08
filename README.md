@@ -34,9 +34,20 @@ bdo gear database, super simple just recently finished coverting the main into c
 > python3 -m pip install -U git+"https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]"
 
 ### Third Step
+Run.
+
+> nano ~/.bashrc
+
+and add the below to the end of the file.
+
 > export PYTHONPATH="/PATH/TO/gearBot/cogs/modules"
 
-Set the python path, I have to figure a different way of doing this, but until then.
+then run this command.
+
+> source ~/.bashrc
+
+Change the "/PATH/TO/" portion to wherever the gearBot directory is.
+I have to figure a different way of doing this, but until then.
 
 ### Fourth Step
 > mysql
@@ -52,7 +63,7 @@ Set the python path, I have to figure a different way of doing this, but until t
 > SHOW VARIABLES LIKE 'collat%'; 
 
 ### Final Step
-Settings up all the keys you'll need.
+Navigate  to the keys.py file and enter all the information missing.
 
 
 
