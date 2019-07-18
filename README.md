@@ -68,5 +68,5 @@ Navigate  to the keys.py file and enter all the information missing.
 
 
 ## Contact me
-If you have any questions you can contact me via discord; n0tj#6859 
+If you have any questions you can contact me via discord, ping me a lot; n0tj#6859 
 
