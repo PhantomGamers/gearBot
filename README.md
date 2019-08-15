@@ -9,7 +9,7 @@
 </p>
 
 # gearBot
-bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability.
+bdo gear database, super simple just recently finished coverting the main into cogs which helps for readability...
 
 
 ## General Use
